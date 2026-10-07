@@ -1,64 +1,143 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taco Chávez</title>
+
+<title>Taco Chávez - Pedidos</title>
 
 <style>
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#fff8f0;
-  color:#222;
+* {
+  box-sizing: border-box;
 }
-header{
-  background:#d71920;
-  color:white;
-  text-align:center;
-  padding:25px 15px;
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff8ed;
+  color: #222;
 }
-h1{margin:0;font-size:38px;}
-header p{font-size:18px;margin:8px 0 0;}
-.container{
-  max-width:700px;
-  margin:auto;
-  padding:20px;
+
+header {
+  background: #d71920;
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
 }
-h2{
-  color:#d71920;
-  border-bottom:2px solid #d71920;
-  padding-bottom:8px;
+
+header h1 {
+  margin: 0;
+  font-size: 38px;
+  font-weight: 900;
 }
-.item{
-  background:white;
-  border-radius:12px;
-  padding:15px;
-  margin:12px 0;
-  box-shadow:0 2px 8px #ddd;
+
+header p {
+  margin: 8px 0 0;
+  font-size: 18px;
+  font-weight: bold;
 }
-.item h3{margin:0 0 6px;}
-.price{
-  color:#d71920;
-  font-weight:bold;
-  font-size:20px;
+
+.container {
+  max-width: 750px;
+  margin: auto;
+  padding: 18px;
 }
-.order{
-  background:#25d366;
-  color:white;
-  text-decoration:none;
-  display:block;
-  text-align:center;
-  padding:15px;
-  border-radius:12px;
-  font-weight:bold;
-  margin-top:25px;
+
+.notice {
+  background: #ffe36e;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
 }
-footer{
-  text-align:center;
-  padding:25px;
-  color:#666;
+
+h2 {
+  color: #d71920;
+  border-bottom: 3px solid #d71920;
+  padding-bottom: 8px;
+}
+
+.product {
+  background: white;
+  border-radius: 15px;
+  margin: 15px 0;
+  padding: 15px;
+  box-shadow: 0 3px 10px #ddd;
+}
+
+.product img {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.product h3 {
+  margin: 5px 0;
+  font-size: 21px;
+}
+
+.description {
+  color: #555;
+  margin: 7px 0;
+}
+
+.price {
+  color: #d71920;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.quantity {
+  width: 85px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.total {
+  position: sticky;
+  bottom: 10px;
+  background: #222;
+  color: white;
+  padding: 16px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 25px;
+  box-shadow: 0 4px 12px #999;
+}
+
+.order-button {
+  width: 100%;
+  border: none;
+  background: #25d366;
+  color: white;
+  padding: 17px;
+  border-radius: 14px;
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px 10px;
+  color: #555;
 }
 </style>
 </head>
@@ -66,80 +145,349 @@ footer{
 <body>
 
 <header>
-<h1>🌮 TACO CHÁVEZ 🌮</h1>
-<p>¡Sabor que te hace volver!</p>
+  <h1>🌮 TACO CHÁVEZ 🌮</h1>
+  <p>EL SABOR QUE MANDA</p>
+  <p>💵 TODOS LOS PRECIOS EN USD</p>
 </header>
 
 <div class="container">
 
-<h2>🌮 TACOS</h2>
+<div class="notice">
+  🛒 SELECCIONA TUS COMBOS, INDICA LA CANTIDAD Y ENVÍA TU PEDIDO
+</div>
 
-<div class="item"><h3>Tacos de Camarón</h3><p class="price">800 CUP</p></div>
-<div class="item"><h3>Tacos de Carne de Res</h3><p class="price">800 CUP</p></div>
-<div class="item"><h3>Tacos de Cerdo</h3><p class="price">750 CUP</p></div>
-<div class="item"><h3>Tacos Mixtos</h3><p class="price">700 CUP</p></div>
-<div class="item"><h3>Tacos de Pollo</h3><p class="price">650 CUP</p></div>
-<div class="item"><h3>Tacos de Picadillo</h3><p class="price">600 CUP</p></div>
-<div class="item"><h3>Tacos al Pastor</h3><p class="price">850 CUP</p></div>
+<h2>🔥 COMBOS</h2>
+
+<!-- COMBO 1 -->
+<div class="product">
+  <img src="combo1.jpg" alt="Combo 1">
+  <h3>Combo 1</h3>
+  <p class="description">
+    3 tacos + acompañante según el menú.
+  </p>
+  <p class="price">$7 USD</p>
+
+  <div class="controls">
+    <strong>Cantidad:</strong>
+    <input class="quantity"
+           type="number"
+           min="0"
+           value="0"
+           data-name="Combo 1"
+           data-price="7">
+  </div>
+</div>
+
+<!-- COMBO 2 -->
+<div class="product">
+  <img src="combo2.jpg" alt="Combo 2">
+  <h3>Combo 2</h3>
+  <p class="description">
+    Combo especial de tacos.
+  </p>
+  <p class="price">$8 USD</p>
+
+  <div class="controls">
+    <strong>Cantidad:</strong>
+    <input class="quantity"
+           type="number"
+           min="0"
+           value="0"
+           data-name="Combo 2"
+           data-price="8">
+  </div>
+</div>
+
+<!-- COMBO 3 -->
+<div class="product">
+  <img src="combo3.jpg" alt="Combo 3">
+  <h3>Combo 3</h3>
+  <p class="description">
+    Combo especial.
+  </p>
+  <p class="price">$7 USD</p>
+
+  <div class="controls">
+    <strong>Cantidad:</strong>
+    <input class="quantity"
+           type="number"
+           min="0"
+           value="0"
+           data-name="Combo 3"
+           data-price="7">
+  </div>
+</div>
+
+<!-- COMBO 4 -->
+<div class="product">
+  <img src="combo4.jpg" alt="Combo 4">
+  <h3>Combo 4 — Hamburguesa</h3>
+  <p class="description">
+    Hamburguesa con papas fritas, queso cheddar,
+    pepino y salsas. Opcional tortilla o huevo frito.
+  </p>
+  <p class="price">$10 USD</p>
+
+  <div class="controls">
+    <strong>Cantidad:</strong>
+    <input class="quantity"
+           type="number"
+           min="0"
+           value="0"
+           data-name="Combo 4 - Hamburguesa"
+           data-price="10">
+  </div>
+</div>
+
+<!-- COMBO 5 -->
+<div class="product">
+  <img src="combo5.jpg" alt="Combo 5">
+  <h3>Combo 5 — Súper Taco de la Casa</h3>
+  <p class="description">
+    Súper Taco de la Casa + acompañante.
+  </p>
+  <p class="price">$8 USD</p>
+
+  <div class="controls">
+    <strong>Cantidad:</strong>
+    <input class="quantity"
+           type="number"
+           min="0"
+           value="0"
+           data-name="Combo 5 - Super Taco de la Casa"
+           data-price="8">
+  </div>
+</div>
+
+<!-- COMBO 6 -->
+<div class="product">
+  <img src="combo6.jpg" alt="Combo 6">
+  <h3>Combo 6</h3>
+  <p class="description">
+    Combo especial.
+  </p>
+  <p class="price">$7 USD</p>
+
+  <div class="controls">
+    <strong>Cantidad:</strong>
+    <input class="quantity"
+           type="number"
+           min="0"
+           value="0"
+           data-name="Combo 6"
+           data-price="7">
+  </div>
+</div>
+
+<!-- COMBO 7 -->
+<div class="product">
+  <img src="combo7.jpg" alt="Combo 7">
+  <h3>Combo 7 — Empanadas + Frappé</h3>
+  <p class="description">
+    Empanadas + frappé.
+  </p>
+  <p class="price">$7 USD</p>
+
+  <div class="controls">
+    <strong>Cantidad:</strong>
+    <input class="quantity"
+           type="number"
+           min="0"
+           value="0"
+           data-name="Combo 7 - Empanadas + Frappe"
+           data-price="7">
+  </div>
+</div>
+
+<!-- COMBO 8 -->
+<div class="product">
+  <img src="combo8.jpg" alt="Combo 8">
+  <h3>Combo 8 — Croquetas + Frappé</h3>
+  <p class="description">
+    Croquetas + frappé.
+  </p>
+  <p class="price">$5 USD</p>
+
+  <div class="controls">
+    <strong>Cantidad:</strong>
+    <input class="quantity"
+           type="number"
+           min="0"
+           value="0"
+           data-name="Combo 8 - Croquetas + Frappe"
+           data-price="5">
+  </div>
+</div>
+
+<!-- COMBO 9 -->
+<div class="product">
+  <img src="combo9.jpg" alt="Combo 9">
+  <h3>Combo 9</h3>
+  <p class="description">
+    Combo especial.
+  </p>
+  <p class="price">$8 USD</p>
+
+  <div class="controls">
+    <strong>Cantidad:</strong>
+    <input class="quantity"
+           type="number"
+           min="0"
+           value="0"
+           data-name="Combo 9"
+           data-price="8">
+  </div>
+</div>
 
 <h2>🥟 EMPANADAS</h2>
 
-<div class="item"><h3>Empanada de Carne de Res</h3><p class="price">700 CUP</p></div>
-<div class="item"><h3>Empanada de Cerdo</h3><p class="price">600 CUP</p></div>
-<div class="item"><h3>Empanada Mixta</h3><p class="price">650 CUP</p></div>
-<div class="item"><h3>Empanada de Pollo</h3><p class="price">550 CUP</p></div>
-<div class="item"><h3>Empanada de Picadillo</h3><p class="price">500 CUP</p></div>
-<div class="item"><h3>Empanada de Queso</h3><p class="price">500 CUP</p></div>
-
-<h2>⭐ ESPECIALIDADES DE LA CASA</h2>
-
-<div class="item">
-<h3>🌮 Súper Taco de la Casa</h3>
-<p>Picadillo, carne de res y carne de cerdo.</p>
+<div class="product">
+  <h3>Empanada de carne</h3>
+  <p class="price">$2 USD</p>
+  <input class="quantity" type="number" min="0" value="0"
+         data-name="Empanada de carne" data-price="2">
 </div>
 
-<div class="item"><h3>Salchipapas</h3><p class="price">1700 CUP</p></div>
-<div class="item"><h3>Papas Fritas</h3><p class="price">900 CUP</p></div>
-<div class="item"><h3>Croquetas</h3><p class="price">650 CUP</p></div>
-<div class="item"><h3>El Nacho</h3><p class="price">1900 CUP</p></div>
-
-<h2>🍔 HAMBURGUESAS</h2>
-
-<div class="item">
-<h3>Hamburguesa Simple</h3>
-<p class="price">900 CUP</p>
+<div class="product">
+  <h3>Empanada de cerdo</h3>
+  <p class="price">$2 USD</p>
+  <input class="quantity" type="number" min="0" value="0"
+         data-name="Empanada de cerdo" data-price="2">
 </div>
 
-<div class="item">
-<h3>Hamburguesa con Agregados</h3>
-<p>Tortilla de huevo, papitas, queso cheddar y pepino.</p>
-<p class="price">1100 CUP</p>
+<div class="product">
+  <h3>Empanada mixta</h3>
+  <p class="price">$2 USD</p>
+  <input class="quantity" type="number" min="0" value="0"
+         data-name="Empanada mixta" data-price="2">
 </div>
 
 <h2>🥤 BEBIDAS</h2>
 
-<div class="item">
-<h3>Frappé</h3>
-<p class="price">1500 CUP</p>
+<div class="product">
+  <h3>Frappé</h3>
+  <p class="price">$3 USD</p>
+  <input class="quantity" type="number" min="0" value="0"
+         data-name="Frappe" data-price="3">
 </div>
 
-<div class="item">
-<h3>Batido de Helado</h3>
-<p>Con mini donas y galletas.</p>
-<p class="price">2300 CUP</p>
+<div class="product">
+  <h3>Batido de helado</h3>
+  <p class="price">$5 USD</p>
+  <input class="quantity" type="number" min="0" value="0"
+         data-name="Batido de helado" data-price="5">
 </div>
 
-<a class="order" href="https://wa.me/5355557500">
-📲 HACER PEDIDO POR WHATSAPP
-</a>
+<h2>➕ ADICIONALES</h2>
+
+<div class="product">
+  <h3>Papas extras</h3>
+  <p class="price">$2 USD</p>
+  <input class="quantity" type="number" min="0" value="0"
+         data-name="Papas extras" data-price="2">
+</div>
+
+<div id="total" class="total">
+  TOTAL: $0.00 USD
+</div>
+
+<button class="order-button" onclick="sendOrder()">
+  📲 ENVIAR PEDIDO POR WHATSAPP
+</button>
 
 <footer>
-<p><strong>TACO CHÁVEZ</strong></p>
-<p>📍 Carretera del Morro #170 entre 9 y 11, Mariana de la Torre</p>
-<p>📞 +53 5 5557500</p>
-<p>💳 Recibimos Zelle</p>
+  <p><strong>TACO CHÁVEZ</strong></p>
+  <p>📍 Carretera del Morro #170 entre 9 y 11, Mariana de la Torre</p>
+  <p>📞 +53 5 5557500</p>
+  <p>💵 PRECIOS SOLAMENTE EN USD</p>
+  <p>💳 Recibimos USD efectivo y Zelle</p>
 </footer>
 
 </div>
+
+<script>
+
+const inputs = document.querySelectorAll(".quantity");
+
+function calculateTotal() {
+
+  let total = 0;
+
+  inputs.forEach(input => {
+
+    const quantity = Number(input.value) || 0;
+    const price = Number(input.dataset.price) || 0;
+
+    total += quantity * price;
+
+  });
+
+  document.getElementById("total").innerText =
+    "TOTAL: $" + total.toFixed(2) + " USD";
+
+}
+
+inputs.forEach(input => {
+  input.addEventListener("input", calculateTotal);
+});
+
+function sendOrder() {
+
+  let order = [];
+  let total = 0;
+
+  inputs.forEach(input => {
+
+    const quantity = Number(input.value) || 0;
+    const price = Number(input.dataset.price) || 0;
+
+    if (quantity > 0) {
+
+      const subtotal = quantity * price;
+
+      order.push(
+        quantity +
+        " x " +
+        input.dataset.name +
+        " — $" +
+        subtotal.toFixed(2) +
+        " USD"
+      );
+
+      total += subtotal;
+
+    }
+
+  });
+
+  if (order.length === 0) {
+
+    alert("Selecciona al menos un producto.");
+
+    return;
+
+  }
+
+  const message =
+    "Hola Taco Chávez 👋\n\n" +
+    "Quiero hacer este pedido:\n\n" +
+    order.join("\n") +
+    "\n\nTOTAL: $" +
+    total.toFixed(2) +
+    " USD" +
+    "\n\nQuiero confirmar mi pedido.";
+
+  const whatsapp =
+    "https://wa.me/5355557500?text=" +
+    encodeURIComponent(message);
+
+  window.location.href = whatsapp;
+
+}
+
+calculateTotal();
+
+</script>
+
 </body>
 </html>
